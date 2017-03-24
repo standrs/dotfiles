@@ -9,3 +9,9 @@ echo "Brewing a bundle..."
 brew tap Homebrew/bundle
 brew bundle
 
+# Set up zshrc
+cp .zshrc ~/.zshrc
+source ~/.zshrc
+
+nvm install node
+
