@@ -3,7 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/quivr/.oh-my-zsh
-
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 # Set theme
 ZSH_THEME="lambda-pure"
 
@@ -26,7 +27,7 @@ HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Enable command auto-correction
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Display red dots during completion
 COMPLETION_WAITING_DOTS="true"
@@ -77,7 +78,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# always show dot files
 alias ls='ls -A'
+alias sl='ls -A'
+# clean filesystem of DS_Store starting at /
+alias cleands='cd && find . -name ".DS_Store" -type f -delete'
 
 bindkey "[C" forward-word
 bindkey "[D" backward-word
