@@ -84,6 +84,9 @@ alias ls='ls -A'
 alias sl='ls -A'
 # clean filesystem of DS_Store starting at /
 alias cleands='cd && find . -name ".DS_Store" -type f -delete'
+alias pg_start='pg_ctl -D /usr/local/var/postgres -l logfile start'
+alias pg_stop='pg_ctl -D /usr/local/var/postgres -l logfile stop'
+alias rezsh='source ~/.zshrc'
 
 bindkey "[C" forward-word
 bindkey "[D" backward-word
