@@ -1,0 +1,59 @@
+LOG:  database system was shut down at 2017-03-31 19:47:05 EDT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+FATAL:  role "postgres" does not exist
+FATAL:  database "quivr" does not exist
+FATAL:  database "quivr" does not exist
+FATAL:  database "fishies" does not exist
+ERROR:  syntax error at or near "CREATE" at character 25
+STATEMENT:  CREATE DATABASE fishies
+	CREATE DATABASE fishies;
+ERROR:  syntax error at or near ")" at character 61
+STATEMENT:  CREATE TABLE fish (
+	text string,
+	serial integer,
+	PRIMARY KEY);
+ERROR:  type "string" does not exist at character 26
+STATEMENT:  CREATE TABLE fish (
+	text string,
+	serial integer,
+	id integer,
+	PRIMARY KEY(id));
+ERROR:  syntax error at or near "create" at character 17
+STATEMENT:  drop table fish
+	create table fish (
+	name text,
+	primary key (id serial));
+ERROR:  syntax error at or near "CREATE" at character 17
+STATEMENT:  drop table fish
+	CREATE table fish (
+	name text,
+	primary key (id serial));
+ERROR:  column "Johnny" does not exist at character 35
+STATEMENT:  INSERT INTO FISHES (name) values ("Johnny");
+ERROR:  database "fishies" is being accessed by other users
+DETAIL:  There are 2 other sessions using the database.
+STATEMENT:  DROP DATABASE fishies;
+ERROR:  database "fishies" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE fishies;
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+FATAL:  terminating connection due to administrator command
+FATAL:  terminating connection due to administrator command
+FATAL:  terminating connection due to administrator command
+FATAL:  terminating connection due to administrator command
+FATAL:  terminating connection due to administrator command
+FATAL:  terminating connection due to administrator command
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2017-04-01 16:32:36 EDT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down

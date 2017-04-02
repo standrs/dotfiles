@@ -5,6 +5,7 @@
 export ZSH=/Users/quivr/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
+
 # Set theme
 ZSH_THEME="lambda-pure"
 
@@ -80,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # always show dot files
-alias ls='ls -A'
+alias ls='ls -AG'
 alias sl='ls -A'
 # clean filesystem of DS_Store starting at /
 alias cleands='cd && find . -name ".DS_Store" -type f -delete'
