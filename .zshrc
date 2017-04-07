@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 
 # always show dot files
 alias ls='ls -AG'
-alias sl='ls -A'
+alias sl='ls -AG'
 # clean filesystem of DS_Store starting at /
 alias cleands='cd && find . -name ".DS_Store" -type f -delete'
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l logfile start'
