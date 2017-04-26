@@ -31,6 +31,10 @@ cp ../.vimrc ~/.vimrc
 cp ../.zshrc ~/.zshrc
 source ~/.zshrc
 
+if [[ "$platform" == 'Linux' ]]; then
+  source ~/.bashrc
+fi
+
 # Install nvm packages
 nvm install node
 npm install --global lambda-pure-prompt
