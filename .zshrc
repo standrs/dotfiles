@@ -2,93 +2,28 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/quivr/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 # Set theme
 ZSH_THEME="lambda-pure"
 
-# Case sensitive completion
-# CASE_SENSITIVE="true"
-
 # Hyphen-insensitive completion
 HYPHEN_INSENSITIVE="true"
-
-# Bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Auto-update frequency
-# export UPDATE_ZSH_DAYS=13
-
-# Disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Disable auto-setting terminal title
-# DISABLE_AUTO_TITLE="true"
-
-# Enable command auto-correction
-# ENABLE_CORRECTION="true"
-
-# Display red dots during completion
 COMPLETION_WAITING_DOTS="true"
-
-# Disable marking untracked files under VCS as dirty | Makes large repo status checks faster
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Change command execution time
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# always show dot files
+# Aliases
 alias ls='ls -AG'
 alias sl='ls -AG'
-# clean filesystem of DS_Store starting at /
 alias cleands='cd && find . -name ".DS_Store" -type f -delete'
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l logfile start'
 alias pg_stop='pg_ctl -D /usr/local/var/postgres -l logfile stop'
 alias rezsh='source ~/.zshrc'
 
+# Fix moving by word
 bindkey "[C" forward-word
 bindkey "[D" backward-word
-
