@@ -7,7 +7,8 @@ export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 # Set theme
-ZSH_THEME="lambda"
+# ZSH_THEME="lambda"
+ZSH_THEME="spaceship"
 
 # Hyphen-insensitive completion
 HYPHEN_INSENSITIVE="true"
