@@ -5,9 +5,12 @@
 export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
+export GOPATH=$HOME/code/goworkspace
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # Set theme
-# ZSH_THEME="lambda"
 ZSH_THEME="spaceship"
 
 # Hyphen-insensitive completion
@@ -21,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls='ls -AG'
 alias sl='ls -AG'
 alias cleands='cd && find . -name ".DS_Store" -type f -delete'
+alias cleansync='cd && find . -name "*sync-conflict*" -type f -delete'
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l logfile start'
 alias pg_stop='pg_ctl -D /usr/local/var/postgres -l logfile stop'
 alias rezsh='source ~/.zshrc'
