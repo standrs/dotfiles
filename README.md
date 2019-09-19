@@ -1,5 +1,4 @@
-# Install scripts
+# Dotfiles
 
-### I'm still learning to write bash scripts, so:
+Basic configs I use
 
-* The scripts don't work entirely and leave things broken
