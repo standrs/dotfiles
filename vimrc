@@ -10,6 +10,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Shopify/shadowenv.vim'
 
 call plug#end()
 
@@ -42,6 +43,7 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
+let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<Cr>
 map <Tab> <C-p>
 

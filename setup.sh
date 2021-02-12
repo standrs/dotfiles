@@ -8,11 +8,9 @@ if [ ! $ZSH ]; then
         rm ~/.zshrc
         rm ~/.vimrc
 
-        mkdir ~/.zshrc.d
-
         ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
         ln -sf ~/dotfiles/zshrc ~/.zshrc
-        ln -sf ~/dotfiles/zshrc.d/alias.zsh ~/.zshrc.d/alias.zsh
+        ln -sf ~/dotfiles/zshrc.d ~/.zshrc.d
 fi
 
 source ~/.zshrc
