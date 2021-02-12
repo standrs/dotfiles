@@ -10,7 +10,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'Shopify/shadowenv.vim'
+" Plug 'Shopify/shadowenv.vim'
 
 call plug#end()
 
