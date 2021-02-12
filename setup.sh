@@ -5,14 +5,15 @@ nvim +PlugInstall +qall
 
 if [ ! $ZSH ]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        rm ~/.zshrc
-        rm ~/.vimrc
-
-        cp ~/dotfiles/gitconfig ~/.gitconfig
-        ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
-        ln -sf ~/dotfiles/zshrc ~/.zshrc
-        ln -sf ~/dotfiles/zshrc.d ~/.zshrc.d
 fi
+
+rm ~/.zshrc
+rm ~/.vimrc
+
+cp ~/dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
+ln -sf ~/dotfiles/zshrc ~/.zshrc
+ln -sf ~/dotfiles/zshrc.d ~/.zshrc.d
 
 source ~/.zshrc
 
