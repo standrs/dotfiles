@@ -4,13 +4,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ngmy/vim-rubocop'
+Plug 'dense-analysis/ale'
 Plug 'neoclide/coc-solargraph'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'Shopify/shadowenv.vim'
+if has('macunix')
+        Plug 'Shopify/shadowenv.vim'
+endif
 
 call plug#end()
 
@@ -78,7 +81,9 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 " ale
-let g:ale_linters = {'ruby': ['ruby, rubocop, standardrb']}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
 
 " Text formatting
 function! <SID>StripTrailingWhitespaces()
