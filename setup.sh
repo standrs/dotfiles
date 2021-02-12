@@ -8,6 +8,7 @@ if [ ! $ZSH ]; then
         rm ~/.zshrc
         rm ~/.vimrc
 
+        cp ~/dotfiles/gitconfig ~/.gitconfig
         ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
         ln -sf ~/dotfiles/zshrc ~/.zshrc
         ln -sf ~/dotfiles/zshrc.d ~/.zshrc.d
