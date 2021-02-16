@@ -39,8 +39,11 @@ else
         [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh" > $LOCAL/local.zsh
 fi
 
+gem install solargraph benchmark
+
 # Install plugins for nvim as defined in init.vim
 nvim +PlugInstall +qall
+nvim "+CocInstall coc-solargraph"
 
 # Reload zsh config
 source ~/.zshrc
