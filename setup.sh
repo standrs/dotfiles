@@ -32,8 +32,7 @@ mkdir -p $LOCAL
 if [ $SPIN ]; then
         echo "alias ls=\"ls --color=auto -Al\"
         alias fd=\"fdfind\"
-        export PATH=/home/spin/src/github.com/shopify/shopify/bin:
-        \$PATH" > $LOCAL/local.zsh
+        export PATH=/home/spin/src/github.com/shopify/shopify/bin:\$PATH" > $LOCAL/local.zsh
 else
         echo "alias redev=\"dev down && dev up\"
         alias ls=\"ls -AGl\"
