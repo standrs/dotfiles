@@ -1,5 +1,9 @@
 # Install necessary packages
-sudo apt-get install -y ripgrep fd-find fzf neovim
+if [ $SPIN ]; then
+        sudo apt-get install -y ripgrep fd-find fzf neovim
+else
+        brew install ripgrep fd fzf neovim
+fi
 
 # Install plug for neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -21,6 +25,20 @@ cp ~/dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/zshrc.d ~/.zshrc.d
+
+LOCAL=~/dotfiles/zshrc.d/local
+mkdir -p $LOCAL
+
+if [ $SPIN ]; then
+        echo "alias ls=\"ls --color=auto -Al\"
+        alias fd=\"fdfind\"
+        export PATH=/home/spin/src/github.com/shopify/shopify/bin:
+        \$PATH" > $LOCAL/local.zsh
+else
+        echo "alias redev=\"dev down && dev up\"
+        alias ls=\"ls -AGl\"
+        [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh" > $LOCAL/local.zsh
+fi
 
 # Install plugins for nvim as defined in init.vim
 nvim +PlugInstall +qall
