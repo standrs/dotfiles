@@ -22,6 +22,7 @@ mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.old
 
 # gitconfig needs to be copied apparently, but symlink the others
 cp ~/dotfiles/gitconfig ~/.gitconfig
+mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/zshrc.d ~/.zshrc.d
