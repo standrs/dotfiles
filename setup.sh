@@ -22,9 +22,9 @@ if [ ! $ZSH ]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-# Non destructive removal of files that may conflict
+# Non destructive removal of default files that may conflict
 mv ~/.zshrc ~/.zshrc.old
-mv ~/.zshrc.d ~/.zshrc.d.old
+rm ~/.zshrc.d ~/.zshrc.d.old
 mv ~/.vimrc ~/.vimrc.old
 mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.old
 
