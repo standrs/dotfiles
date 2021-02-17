@@ -42,6 +42,7 @@ if [ $SPIN ]; then
         echo "alias ls=\"ls --color=auto -Al\"
 alias fd=\"fdfind\"
 export PATH=/home/spin/src/github.com/shopify/shopify/bin:\$PATH
+export PATH=/usr/local/bundle/gems/solargraph-0.40.3/bin:\$PATH
 export NVM_DIR=\"\$HOME/.nvm\"
 [ -s \"\$NVM_DIR/nvm.sh\" ] && \. \"\$NVM_DIR/nvm.sh\"
 [ -s \"\$NVM_DIR/bash_completion\" ] && \. \"\$NVM_DIR/bash_completion\""> $LOCAL/local.zsh
