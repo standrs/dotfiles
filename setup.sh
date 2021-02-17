@@ -1,6 +1,14 @@
 # Install necessary packages
 if [ $SPIN ]; then
         sudo apt-get install -y ripgrep fd-find fzf neovim
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+        nvm install --lts
+        nvm use --lts
 else
         brew install ripgrep fd fzf neovim
 fi
@@ -32,20 +40,23 @@ mkdir -p $LOCAL
 
 if [ $SPIN ]; then
         echo "alias ls=\"ls --color=auto -Al\"
-        alias fd=\"fdfind\"
-        export PATH=/home/spin/src/github.com/shopify/shopify/bin:\$PATH" > $LOCAL/local.zsh
+alias fd=\"fdfind\"
+export PATH=/home/spin/src/github.com/shopify/shopify/bin:\$PATH
+export NVM_DIR=\"\$HOME/.nvm\"
+[ -s \"\$NVM_DIR/nvm.sh\" ] && \. \"\$NVM_DIR/nvm.sh\"
+[ -s \"\$NVM_DIR/bash_completion\" ] && \. \"\$NVM_DIR/bash_completion\""> $LOCAL/local.zsh
 else
         echo "alias redev=\"dev down && dev up\"
-        alias ls=\"ls -AGl\"
-        [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh" > $LOCAL/local.zsh
+alias ls=\"ls -AGl\"
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh" > $LOCAL/local.zsh
 fi
+
+# Reload zsh config
+source ~/.zshrc
 
 gem install solargraph benchmark
 
 # Install plugins for nvim as defined in init.vim
 nvim +PlugInstall +qall
-nvim "+CocInstall coc-solargraph"
-
-# Reload zsh config
-source ~/.zshrc
+nvim "+CocInstall coc-solargraph" +qall
 
